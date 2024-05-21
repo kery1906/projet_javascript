@@ -3,37 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style_panneau.css">
     <title>Burger</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+        .full-height {
+            height: 100%;
+        }
+        .slide-container {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 20px;
+        }
+        .custom-navbar {
+            background-color: #fc815057;
+        }
+        .navbar-brand, .nav-link {
+            color: #ffffff; /* White color for links */
+        }
+        .nav-link:hover {
+            color: #ffe3e3; /* Light pink on hover */
+        }
+        .navbar-toggler {
+            border-color: rgba(255, 255, 255, 0.5); /* Semi-transparent border for the toggler */
+        }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28%255, %255, %255, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+        .navbar-brand img {
+            height: 12vh; /* Adjust the height as needed */
+            width: auto;
+        }
+        .navbar-nav .nav-item {
+            margin-left: 15px; /* Adjust the space between nav items */
+        }
+    </style>
 </head>
 <body>
     <header>
-        <nav>
-            <ul class="contnav">
-                <li><a href="./panneau.html">Panneau publicitaire</a></li>
-                <li><a href="./seconddegre.html">Polynome du second degre</a></li>
-                <li><a href="./circuit.html">Calcul d'un circuit</a></li>
-            </ul>
+        <nav class="navbar navbar-expand-lg custom-navbar">
+            <a class="navbar-brand" href="#"><img src="../img/graduation.png" alt="Logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./panneau.html">Panneau publicitaire</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./seconddegre.html">Polynome du second degre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./circuit.html">Calcul d'un circuit</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
     </header>
-    <div class="carousel">
-        <img src="../img/fleche-droite.png" id="prevBtn" onclick="prevslide()">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <p>Chicken burger</p>
-                <img src="../img/Burger-removebg-preview.png" alt="Image 1">
+
+    <div class="d-flex justify-content-center align-items-center full-height">
+        <div class="slide-container">
+            <div class="slides">
+                <img src="../img/et.jpg" class="active">
+                <img src="../img/et2.jpg">
+                <img src="image-3.jpg">
+                <img src="image-4.jpg">
+                <img src="image-5.jpg">
             </div>
-            <div class="carousel-item">
-                <p>Big mac</p>
-                <img src="../img/téléchargement-removebg-preview.png" alt="Image 2">
+        
+            <div class="buttons">
+                <span class="next">&#10095;</span>
+                <span class="prev">&#10094;</span>
             </div>
-            <div class="carousel-item">
-                <p>Tirex chicken burger</p>
-                <img src="../img/téléchargement__1_-removebg-preview.png" alt="Image 3">
+        
+            <div class="dotsContainer">
+                <div class="dot active" attr='0' onclick="switchImage(this)"></div>
+                <div class="dot" attr='1' onclick="switchImage(this)"></div>
+                <div class="dot" attr='2' onclick="switchImage(this)"></div>
+                <div class="dot" attr='3' onclick="switchImage(this)"></div>
+                <div class="dot" attr='4' onclick="switchImage(this)"></div>
             </div>
         </div>
-        <img src="../img/fleche-droite.png" id="nextBtn" onclick="nextslide()">
-    </div>  
-    <script src="../js/script_panneau.js"></script>
+    </div>
+
+    <script>
+        // Access the Images
+        let slideImages = document.querySelectorAll('.slides img');
+        // Access the next and prev buttons
+        let next = document.querySelector('.next');
+        let prev = document.querySelector('.prev');
+        // Access the indicators
+        let dots = document.querySelectorAll('.dot');
+
+        var counter = 0;
+
+        // Code for next button
+        next.addEventListener('click', slideNext);
+        function slideNext(){
+            slideImages[counter].style.animation = 'next1 0.5s ease-in forwards';
+            if(counter >= slideImages.length-1){
+                counter = 0;
+            }
+            else{
+                counter++;
+            }
+            slideImages[counter].style.animation = 'next2 0.5s ease-in forwards';
+            indicators();
+        }
+
+        // Code for prev button
+        prev.addEventListener('click', slidePrev);
+        function slidePrev(){
+            slideImages[counter].style.animation = 'prev1 0.5s ease-in forwards';
+            if(counter == 0){
+                counter = slideImages.length-1;
+            }
+            else{
+                counter--;
+            }
+            slideImages[counter].style.animation = 'prev2 0.5s ease-in forwards';
+            indicators();
+        }
+
+        // Auto sliding
+        function autoSliding(){
+            deletInterval = setInterval(timer, 2000);
+            function timer(){
+                slideNext();
+                indicators();
+            }
+        }
+        autoSliding();
+
+        // Stop auto sliding when mouse is over
+        const container = document.querySelector('.slide-container');
+        container.addEventListener('mouseover', function(){
+            clearInterval(deletInterval);
+        });
+
+        // Resume sliding when mouse is out
+        container.addEventListener('mouseout', autoSliding);
+
+        // Add and remove active class from the indicators
+        function indicators(){
+            for(i = 0; i < dots.length; i++){
+                dots[i].className = dots[i].className.replace(' active', '');
+            }
+            dots[counter].className += ' active';
+        }
+
+        // Add click event to the indicator
+        function switchImage(currentImage){
+            currentImage.classList.add('active');
+            var imageId = currentImage.getAttribute('attr');
+            if(imageId > counter){
+                slideImages[counter].style.animation = 'next1 0.5s ease-in forwards';
+                counter = imageId;
+                slideImages[counter].style.animation = 'next2 0.5s ease-in forwards';
+            }
+            else if(imageId == counter){
+                return;
+            }
+            else{
+                slideImages[counter].style.animation = 'prev1 0.5s ease-in forwards';
+                counter = imageId;
+                slideImages[counter].style.animation = 'prev2 0.5s ease-in forwards';    
+            }
+            indicators();
+        }
+    </script>
 </body>
 </html>

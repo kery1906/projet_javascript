@@ -3,14 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
     <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+
 </head>
 <body>
-    <div>
-        <a href="./html/panneau.html"><img src="./img/Capture d’écran (89).png" alt="">panneau publicitaire</a>
-        <a href="./html/seconddegre.html"><img src="./img/Capture d’écran (88).png" alt="">polynome du second degre</a>
-        <a href="./html/circuit.html"><img src="./img/Capture d’écran (90).png" alt="">calcul d'un circuit</a>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <a href="./html/panneau.html" class="card-link">
+                    <div class="card">
+                        <img src="./img/Capture d’écran (89).png" alt="panneau publicitaire">
+                        <div class="intro-card">
+                            <h1>Panneau publicitaire</h1>
+                            <p>Maximisez votre visibilité et attirez l'attention de vos clients potentiels.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <a href="./html/seconddegre.html" class="card-link">
+                    <div class="card">
+                        <img src="./img/Capture d’écran (88).png" alt="polynome du second degre">
+                        <div class="intro-card">
+                            <h1>Polynome du second degré</h1>
+                            <p>Résolvez facilement des équations complexes pour des solutions rapides et efficaces.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <a href="./html/circuit.html" class="card-link">
+                    <div class="card">
+                        <img src="./img/Capture d’écran (90).png" alt="calcul d'un circuit">
+                        <div class="intro-card">
+                            <h1>Calcul d'un circuit</h1>
+                            <p>Optimisez la performance de vos systèmes électriques en quelques étapes simples.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
     </div>
+    <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
-</html> 
+</html>
