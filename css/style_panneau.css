@@ -1,0 +1,283 @@
+/* Définition de la police Poppins */
+@font-face {
+    font-family: 'poppins';
+    src: url(../fonts/Poppins-Medium.ttf);
+}
+
+/* Réinitialisation des marges et des paddings par défaut pour tous les éléments */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style de base pour le corps de la page */
+body {
+    font-family: 'poppins';
+    margin: 0;
+    padding: 0;
+    background-color: rgba(251, 193, 93, 0.477); /* Couleur de fond avec transparence */
+}
+
+/* navigateur */
+
+nav {
+    background-color: #fc815057;
+    height: 10vh;
+    box-shadow: 2px 5px 5px #00000058;
+}
+.contnav {
+    display: flex;
+    margin-left: 2%;
+    gap: 23%;
+    list-style-type: none;
+}
+.contnav a {
+    margin-top: 3%;
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    transition: all 0.2s linear;
+}
+.contnav a:hover {
+    color: #ffff;
+}
+.contnav li {
+    margin-top: 1%;
+
+}
+/* Style pour le titre principal */
+h1 {
+    color: #ffffff;
+    margin: 1% 0 0 2%;
+    padding: 0;
+    font-size: 2.6em;
+    color: #ffa200; /* Couleur orange pour le titre */
+}
+
+/* Style pour les icônes de navigation */
+.icones {
+    margin-left: 64%;
+    margin-top: 2%;
+    display: flex;
+    list-style-type: none; /* Suppression des puces */
+    gap: 60%; /* Espacement entre les éléments */
+}
+
+/* Style pour les images des icônes */
+.icones img {
+    filter: invert(100%); /* Inversion des couleurs pour les rendre blanches */
+    width: 30px;
+}
+
+/* Conteneur pour la liste des types de nourriture */
+.contfood {
+    margin-top: 0;
+    background-color: #e1991b; /* Couleur de fond orange */
+}
+
+/* Style pour la liste des types de nourriture */
+.contfood .foodlist {
+    display: flex;
+    list-style-type: none;
+    gap: 20.3%; /* Espacement entre les éléments */
+}
+
+/* Style pour les liens de la liste de nourriture */
+.contfood a {
+    text-decoration: none; /* Suppression du soulignement */
+    color: #000000; /* Couleur noire pour le texte */
+}
+
+/* Conteneur pour les éléments du carrousel */
+.carousel-inner {
+    position: relative;
+    width: 30%;
+    max-width: 400px;
+    margin: 0 auto;
+    overflow: hidden; /* Masquer le débordement */
+}
+
+/* Style pour les images du carrousel */
+.carousel-inner img {
+    width: 100%;
+    max-height: 200px; /* Hauteur maximale des images */
+    object-fit: contain; /* Ajuster l'image sans la recadrer */
+    display: none; /* Cacher par défaut */
+}
+
+/* Afficher la première image par défaut */
+.carousel-inner img:first-of-type {
+    display: block;
+}
+
+/* Style pour les légendes du carrousel */
+.carousel-inner p {
+    display: none; /* Cacher par défaut */
+    position: relative;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    color: #000;
+    font-size: 1.2em;
+    padding: 5px;
+}
+
+/* Afficher la première légende par défaut */
+.carousel-inner p:first-of-type {
+    display: block;
+}
+
+/* Conteneur général pour le carrousel */
+.carousel {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style pour les boutons du carrousel */
+button {
+    background-color: #007bff; /* Couleur bleue */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Positionnement des éléments du carrousel */
+.carousel-inner {
+    position: relative;
+    width: 30%;
+    max-width: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* Style pour les éléments du carrousel */
+.carousel-item {
+    position: absolute;
+    width: 100%;
+    transition: opacity 1s, transform 1s; /* Transition pour l'opacité et la transformation */
+    opacity: 0; /* Opacité initiale */
+    transform: translateX(100px); /* Translation initiale */
+}
+
+/* Style pour l'élément actif du carrousel */
+.carousel-item.active {
+    opacity: 1; /* Opacité à 100% */
+    transform: translateX(0); /* Aucun décalage */
+    position: relative; /* Position relative pour l'élément actif */
+}
+
+/* Conteneur général pour le carrousel */
+.carousel {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* fleches */
+#prevBtn, #nextBtn {
+    font-family: 'poppins';
+    width: 5%;
+    height: 6vh;
+    font-size: 18px;
+    border-radius: 8px;
+    margin: 13% 20%;
+    transition: all 0.2s ease;
+
+}
+#nextBtn:hover {
+    cursor: pointer;
+    width: 8%;
+    height: 7vh;
+    filter: invert(50%);
+}
+#prevBtn {
+    transform: rotateZ(180deg);
+}
+#prevBtn:hover {
+    cursor: pointer;
+    width: 8%;
+    height: 7vh;
+    filter: invert(50%);
+}
+
+
+/* Style pour le pied de page */
+footer {
+    width: 100%;
+    background: linear-gradient(to right, #c29541, #dc9a38, #e1991b); /* Dégradé de couleurs */
+    display: flex;
+    color: #ffffff;
+    padding: 100px 0 30px;
+    border-top-left-radius: 160px; /* Bord supérieur gauche arrondi */
+    font-size: 13px;
+    line-height: 20px;
+    flex-direction: column;
+    gap: 2px;
+}
+
+/* Style pour les lignes du pied de page */
+footer .row {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+/* Style pour les colonnes du pied de page */
+footer .col {
+    flex-basis: 15%;
+    padding: 5%; 
+}
+
+/* Style pour le logo du pied de page */
+footer .logo {
+    width: 80px;
+    margin-bottom: 30px;
+}
+
+/* Style pour les images du pied de page */
+footer img {
+    margin: 20px 0 10px 50px;
+    width: 40px;
+}
+
+/* Conteneur pour les contacts du pied de page */
+.contfoot {
+    display: flex;
+    gap: 10px-4;
+}
+
+/* Style pour les paragraphes de contact */
+.contfoot p {
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+/* Style pour les liens de contact */
+.contfoot a {
+    text-decoration: none;
+    columns: #0000;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+/* Style pour les liens du pied de page */
+footer a {
+    color: #000000;
+}
+
+/* Style pour la section de copyright */
+.copy {
+    background-color: #000000;
+}
+
+/* Style pour le texte de copyright */
+.copy p {
+    color: #ffffff;
+}

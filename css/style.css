@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'pop';
+    src: url(../fonts/Poppins-Medium.ttf);
+}
+body {
+    font-family: 'pop';
+    display: flex;
+    margin: 0;
+    padding: 15% 10%;
+    background: linear-gradient(to right, #eec36780, #f9a3399f,#eec36780);
+}
+div{
+    display: flex;
+    /* flex-wrap: wrap; */
+    gap: 8%;
+}
+img:hover {
+    width: 105%;
+}
+
+img {
+    
+    border: solid 3px #fc76008f;
+    box-shadow: 3px 5px 5px #0000004f;
+    border-radius: 50px;
+    width: 100%;
+    transition: all 0.2s ease;
+}
+a {
+    text-decoration: none;
+    text-align: center;
+    font-size: 23px;
+    color: black;
+
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style_panneau.css">
+    <title>Burger</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="contnav">
+                <li><a href="./panneau.html">Panneau publicitaire</a></li>
+                <li><a href="./seconddegre.html">Polynome du second degre</a></li>
+                <li><a href="./circuit.html">Calcul d'un circuit</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="carousel">
+        <img src="../img/fleche-droite.png" id="prevBtn" onclick="prevslide()">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <p>Chicken burger</p>
+                <img src="../img/Burger-removebg-preview.png" alt="Image 1">
+            </div>
+            <div class="carousel-item">
+                <p>Big mac</p>
+                <img src="../img/téléchargement-removebg-preview.png" alt="Image 2">
+            </div>
+            <div class="carousel-item">
+                <p>Tirex chicken burger</p>
+                <img src="../img/téléchargement__1_-removebg-preview.png" alt="Image 3">
+            </div>
+        </div>
+        <img src="../img/fleche-droite.png" id="nextBtn" onclick="nextslide()">
+    </div>  
+    <script src="../js/script_panneau.js"></script>
+</body>
+</html>

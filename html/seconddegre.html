@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculatrice</title>
+    <link rel="stylesheet" href="../css/style_seconddegre.css">
+    
+</head>
+<body>
+    <nav>
+        <ul class="contnav">
+            <li><a href="./panneau.html">Panneau publicitaire</a></li>
+            <li><a href="./seconddegre.html">Polynome du second degre</a></li>
+            <li><a href="./circuit.html">Calcul d'un circuit</a></li>
+        </ul>
+    </nav>
+            <div id="cont">
+                <h2>Trinôme du second degré dans R</h2>
+                <input id="a" type="number" placeholder="a"><label for=""> x<sup>2</sup></label>
+                <input id="b" type="number" placeholder="b"><label for=""> x</label>
+                <input id="c" type="number" placeholder="c"><br>
+                <div class="contb">
+                    <button id="calculer" onclick="equation()"
+                >calculer</button>
+               <button type="reset" onclick="reinitialiser()" id="reint">AC</button>
+                </div>
+                <p> Solution: <span id="resultat"></span></p>
+            </div>    
+            
+    <script src="../js/script_seconddegre.js"></script>
+</body>
+</html>
